@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::resource('ong', ControladorOng::class);
+Route::resource('usuaris', ControladorUsuaris::class);
