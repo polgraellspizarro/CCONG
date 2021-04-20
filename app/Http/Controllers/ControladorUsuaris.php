@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Model\Usuaris
+use App\Models\Usuaris;
 
 class ControladorUsuaris extends Controller
 {
@@ -15,7 +15,7 @@ class ControladorUsuaris extends Controller
     public function index()
     {
         $usuaris = Usuaris::all();
-	return view('index', compact('usuaris'));
+	return view('usuaris/index', compact('usuaris'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ControladorUsuaris extends Controller
      */
     public function create()
     {
-        return view('welcome');
+        return view('usuaris/crea');
     }
 
     /**
@@ -70,7 +70,7 @@ class ControladorUsuaris extends Controller
     public function edit($id)
     {
         $usuaris = Usuaris::findOrFail($id);
-	return view('actualitza', compact('usuaris'));
+	return view('usuaris/actualitzar', compact('usuaris'));
     }
 
     /**
@@ -103,7 +103,9 @@ class ControladorUsuaris extends Controller
      */
     public function destroy($id)
     {
-        $usuaris = Usuaris::findOrFail($id);
-	return view('index', compact('usuaris'));
+        $usuaris = usuaris::findOrFail($id);
+        $usuaris->delete();
+
+        return redirect('/usuaris')->with('completed', 'Usuari esborrat');
     }
 }

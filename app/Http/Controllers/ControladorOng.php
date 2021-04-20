@@ -25,7 +25,7 @@ class ControladorOng extends Controller
      */
     public function create()
     {
-        return view('Welcome');
+        return view('ong/crea');
     }
 
     /**
@@ -103,6 +103,8 @@ class ControladorOng extends Controller
     public function destroy($id)
     {
         $ong = ong::findOrFail($id);
-	return view('ong/index', compact('ong'));
+        $ong->delete();
+
+        return redirect('/ong')->with('completed', 'Ong Esborrada');
     }
 }

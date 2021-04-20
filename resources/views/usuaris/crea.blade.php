@@ -18,39 +18,39 @@
         </ul>
       </div>
     @endif
-      <form method="post" action="{{ route('ong.store') }}">
+      <form method="post" action="{{ route('usuaris.store') }}">
           <div class="form-group">
               @csrf
-              <label for="cif">Username</label>
-              <input type="text" class="form-control" name="cif"/>
+              <label for="username">Username</label>
+              <input type="text" class="form-control" name="username"/>
           </div>
           <div class="form-group">
-              <label for="nom">Password</label>
+              <label for="password">Password</label>
+              <input type="text" class="form-control" name="password"/>
+          </div>
+          <div class="form-group">
+              <label for="nom">Nom</label>
               <input type="text" class="form-control" name="nom"/>
           </div>
-          <div class="form-group">
-              <label for="adreca">Nom</label>
-              <input type="text" class="form-control" name="adreca"/>
-          </div>
 	  <div class="form-group">
-		<label for="poblacio">Cognom</label>
-		<input type="text" class="form-control" name="poblacio"/>
+		<label for="cognom">Cognom</label>
+		<input type="text" class="form-control" name="cognom"/>
 	  </div>
 	  <div class="form-group">
-		<label for="comarca">Email</label>
-		<input type="text" class="form-control" name="comarca"/>
+		<label for="email">Email</label>
+		<input type="text" class="form-control" name="email"/>
 	  </div>
 	  <div class="form-group">
-		<label for="tipus">Mobil</lable>
-		<input type="text" class="form-control" name="tipus"/>
+		<label for="mobil">Mobil</lable>
+		<input type="text" class="form-control" name="mobil"/>
 	  </div>
       <div class="form-group">
-		<label for="tipus">admin</lable>
+		<label for="admin">admin</lable>
 		<input type="text" class="form-control" name="admin"/>
 	  </div>
           <button type="submit" class="btn btn-block btn-primary">Envia</button>
       </form>
   </div>
 </div>
-<br><a href="{{ url('ong') }}">Accés directe a la Llista d'usuaris</a>
+<br><a href="{{ url('usuaris') }}">Accés directe a la Llista d'usuaris</a>
 @endsection

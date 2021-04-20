@@ -18,14 +18,14 @@
             </ul>
         </div>
         @endif
-        <form method="post" action="{{ route('ong.update', $ong->id) }}">
+        <form method="post" action="{{ route('usuaris.update', $usuaris->id) }}">
             <div class="form-group">
                 @csrf
                 @method('PATCH')
 		<label for="username">Username</label>
 		<input type="text" class="form-control" name="username" value="{{ $usuaris->username}}" />
 	    </div>
-	    <div>
+	    <div class="form-group">
                 <label for="password">Password</label>
                 <input type="text" class="form-control" name="password" value="{{ $usuaris->password }}" />
             </div>
@@ -54,5 +54,5 @@
         </form>
     </div>
 </div>
-<br><a href="{{ url('ong') }}">Accés directe a la Llista de ongs</a
+<br><a href="{{ url('usuaris') }}">Accés directe a la Llista d'usuaris</a
 @endsection

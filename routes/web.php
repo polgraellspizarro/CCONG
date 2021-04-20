@@ -19,3 +19,9 @@ Route::get('/', function () {
 
 Route::resource('ong', ControladorOng::class);
 Route::resource('usuaris', ControladorUsuaris::class);
+Route::resource('socis', ControladorSocis::class);
+Route::resource('voluntaris', ControladorVoluntaris::class);
+Route::resource('professionals', ControladorProfessionals::class);
+Route::get('/home', function (){
+    return view('welcome');
+});

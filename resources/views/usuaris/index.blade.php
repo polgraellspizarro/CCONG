@@ -24,18 +24,18 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($ong as $ongs)
+        @foreach($usuaris as $usuaris)
         <tr>
-            <td>{{$ongs->id}}</td>
-            <td>{{$ongs->username}}</td>
-            <td>{{$ongs->password}}</td>
-            <td>{{$ongs->nom}}</td>
-	        <td>{{$ongs->cognom}}</td>
-	        <td>{{$ongs->email}}</td>
-            <td>{{$ongs->mobil}}</td>
-	        <td>{{$ongs->admin}}</td>
+            <td>{{$usuaris->id}}</td>
+            <td>{{$usuaris->username}}</td>
+            <td>{{$usuaris->password}}</td>
+            <td>{{$usuaris->nom}}</td>
+	        <td>{{$usuaris->cognom}}</td>
+	        <td>{{$usuaris->email}}</td>
+            <td>{{$usuaris->mobil}}</td>
+	        <td>{{$usuaris->admin}}</td>
             <td class="text-left">
-                <a href="{{ route('usuaris.edit', $ongs->id)}}" class="btn btn-success btn-sm">Edita</a>
+                <a href="{{ route('usuaris.edit', $usuaris->id)}}" class="btn btn-success btn-sm">Edita</a>
                 <form action="{{ route('usuaris.destroy', $usuaris->id)}}" method="post" style="display: inline-block">
                     @csrf
                     @method('DELETE')
